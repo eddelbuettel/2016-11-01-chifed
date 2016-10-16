@@ -1,19 +1,19 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
 root: .               # DON'T CHANGE THIS EITHER.  (THANK YOU.)
-carpentry: "FIXME"    # what kind of Carpentry (must be either "dc" or "swc")
-venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
-address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
-country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use http://www.latlong.net/)
-humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
-startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["FIXME"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["FIXME"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-contact: ["fixme@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+carpentry: "swc"      # what kind of Carpentry (must be either "dc" or "swc")
+venue: "Chicago FED"  # brief name of host site without address (e.g., "Euphoric State University")
+address: "230 South LaSalle St, Chicago, IL 60604"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
+country: "us"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
+language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
+latlng: "41.878476,-87.633007"      # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use http://www.latlong.net/)
+humandate: "Nov 1-2, 2016"          # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "9:00am - 5:00pm"        # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+startdate: 2016-11-01      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2016-11-02        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+instructor: ["Dirk Eddelbuettel, Kyler Brown"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: [""]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+contact: ["edd@debian,org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 etherpad:             # optional: URL for the workshop Etherpad if there is one
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
@@ -47,10 +47,10 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 </iframe>
 {% endif %}
 
-<h4>This is the workshop template.  Use it to create your own website.
-Delete this line and please fill in 
-<a href="{{site.amy_site}}/submit">this self-organized workshop form</a>
-and the administrator will contact you if we need any extra information.</h4>
+<!-- <h4>This is the workshop template.  Use it to create your own website. -->
+<!-- Delete this line and please fill in  -->
+<!-- <a href="{{site.amy_site}}/submit">this self-organized workshop form</a> -->
+<!-- and the administrator will contact you if we need any extra information.</h4> -->
 
 <h2 id="general">General Information</h2>
 
@@ -86,7 +86,7 @@ and the administrator will contact you if we need any extra information.</h4>
 -->
 <p id="who">
   <strong>Who:</strong>
-  The course is aimed at graduate students and other researchers.
+  The course is aimed at research assisantants and other researchers.
   <strong>You don't need to have any previous knowledge of the tools that will
     be presented at the workshop.</strong>
 </p>
@@ -116,12 +116,13 @@ and the administrator will contact you if we need any extra information.</h4>
   Modify the block below if there are any special requirements.
 -->
 <p id="requirements">
-  <strong>Requirements:</strong> Participants must bring a laptop with a
+  <strong>Requirements:</strong> Typically, participants must bring a laptop with a
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
   on. They should have a few specific software packages installed (listed
   <a href="#setup">below</a>). They are also required to abide by
-  Software Carpentry's
-  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+  Software Carpentry's <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+  <br>
+  However, for this workshop, computers will be provided.
 </p>
 
 <!--
@@ -130,23 +131,23 @@ and the administrator will contact you if we need any extra information.</h4>
   Modify the block below if there are any barriers to accessibility or
   special instructions.
 -->
-<p id="accessibility">
-  <strong>Accessibility:</strong> We are committed to making this workshop
-  accessible to everybody.
-  The workshop organisers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
-<p>
-  Materials will be provided in advance of the workshop and
-  large-print handouts are available if needed by notifying the
-  organizers in advance.  If we can help making learning easier for
-  you (e.g. sign-language interpreters, lactation facilities) please
-  <a href="mailto:{{page.contact}}">get in touch</a> and we will
-  attempt to provide them.
-</p>
+<!-- <p id="accessibility"> -->
+<!--   <strong>Accessibility:</strong> We are committed to making this workshop -->
+<!--   accessible to everybody. -->
+<!--   The workshop organisers have checked that: -->
+<!-- </p> -->
+<!-- <ul> -->
+<!--   <li>The room is wheelchair / scooter accessible.</li> -->
+<!--   <li>Accessible restrooms are available.</li> -->
+<!-- </ul> -->
+<!-- <p> -->
+<!--   Materials will be provided in advance of the workshop and -->
+<!--   large-print handouts are available if needed by notifying the -->
+<!--   organizers in advance.  If we can help making learning easier for -->
+<!--   you (e.g. sign-language interpreters, lactation facilities) please -->
+<!--   <a href="mailto:{{page.contact}}">get in touch</a> and we will -->
+<!--   attempt to provide them. -->
+<!-- </p> -->
 
 <!--
   CONTACT EMAIL ADDRESS
