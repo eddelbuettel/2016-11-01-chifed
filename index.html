@@ -195,22 +195,28 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   <div class="col-md-6">
     <h3>Day 1</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
+      <tr> <td>08:30</td>  <td>Breakfast</td> </tr>
+      <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell: Shell</td> </tr>
       <tr> <td>10:30</td> <td>Coffee</td> </tr>
+      <tr> <td>10:45</td>  <td>Automating tasks with the Unix shell: Make</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
+      <tr> <td>13:00</td>  <td>Basic Programming with Matlab</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
+      <tr> <td>14:45</td>  <td>Basic Programming with Matlab (continued)</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
     </table>
   </div>
   <div class="col-md-6">
     <h3>Day 2</h3>
     <table class="table table-striped">
+      <tr> <td>08:30</td>  <td>Breakfast</td> </tr>
       <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
       <tr> <td>10:30</td>  <td>Coffee</td> </tr>
+      <tr> <td>09:00</td>  <td>Version control with Git (continued)</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
+      <tr> <td>13:00</td>  <td>Advanced Matlab</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
+      <tr> <td>14:45</td>  <td>Advanced Matlab (continued)</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
     </table>
   </div>
@@ -272,6 +278,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
       <li><a href="{{site.swc_pages}}/shell-novice/reference/">Reference...</a></li>
     </ul>
   </div>
+  <!--
   <div class="col-md-6">
     <h3 id="syllabus-python">Programming in Python</h3>
     <ul>
@@ -285,6 +292,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
       <li><a href="{{site.swc_pages}}/python-novice-inflammation/reference/">Reference...</a></li>
     </ul>
   </div>
+  -->
   <!--
   <div class="col-md-6">
     <h3 id="syllabus-r">Programming in R</h3>
@@ -298,19 +306,20 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
     </ul>
   </div>
   -->
-  <!--
   <div class="col-md-6">
-    <h3 id="syllabus-matlab">Programming in MATLAB</h3>
+    <h3 id="syllabus-sql">Automation and Make</h3>
     <ul>
-      <li>Working with arrays</li>
-      <li>Reading and plotting data</li>
-      <li>Creating and using functions</li>
-      <li>Loops and conditionals</li>
-      <li>Defensive programming</li>
-      <li><a href="{{site.swc_pages}}/matlab-novice-inflammation/reference/">Reference...</a></li>
-     </ul>
-   </div>
-   -->
+      <li>Making results easier to reproduce</li>
+      <li>Writing simple Makefiles</li>
+      <li>Abbreviating rules in Makefiles</li>
+      <li>Dependencies on Data and Code</li>
+      <li>Using Pattern in Rules</li>
+      <li>Eliminate Redundancy in Makefiles</li>
+      <li>Self-Documenting Makefiles</li>
+      <li>Advantages and disadvantages of using tools like Make</li>
+      <li><a href="{{site.swc_pages}}/make-novice/reference/">Reference...</a></li>
+    </ul>
+  </div>
 </div>
 
 <div class="row">
@@ -328,6 +337,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
       <li><a href="{{site.swc_pages}}/git-novice/reference/">Reference...</a></li>
     </ul>
   </div>
+  <!--
   <div class="col-md-6">
     <h3 id="syllabus-sql">Managing Data with SQL</h3>
     <ul>
@@ -342,6 +352,18 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
       <li><a href="{{site.swc_pages}}/sql-novice-survey/reference/">Reference...</a></li>
     </ul>
   </div>
+  -->
+  <div class="col-md-6">
+    <h3 id="syllabus-matlab">Programming in MATLAB</h3>
+    <ul>
+      <li>Working with arrays</li>
+      <li>Reading and plotting data</li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals</li>
+      <li>Defensive programming</li>
+      <li><a href="{{site.swc_pages}}/matlab-novice-inflammation/reference/">Reference...</a></li>
+     </ul>
+   </div>
 </div>
 
 <hr/>
@@ -358,12 +380,16 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   'tools/check' as well.
 -->
 
+
 <h2 id="setup">Setup</h2>
 
 <p>
   To participate in a Software Carpentry workshop, you will need
   access to the software described below. In addition, you will
-  need an up-to-date web browser.
+  need an up-to-date web browser. For this workshop, participants will be
+  given suitable machines so the following section does not strictly
+  apply. It is left as a reference in case a personal computer or laptop is
+  need of a similar setup.
 </p>
 <p>
   We maintain a list of common issues that occur during installation as a reference for instructors
@@ -580,181 +606,182 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   </div>
 </div> <!-- End of 'editor' section. -->
 
-<div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
-           the workshop will teach Python using something other than
-           the IPython notebook.
-           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
-  <h3>Python</h3>
+<!-- <div id="python"> <\!-- Start of 'Python' section. Remove the third paragraph if -->
+<!--            the workshop will teach Python using something other than -->
+<!--            the IPython notebook. -->
+<!--            Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -\-> -->
+<!--   <h3>Python</h3> -->
 
-  <p>
-    <a href="http://python.org">Python</a> is a popular language for
-    scientific computing, and great for general-purpose programming as
-    well.  Installing all of its scientific packages individually can be
-    a bit difficult, so we recommend
-    <a href="https://www.continuum.io/anaconda">Anaconda</a>,
-    an all-in-one installer.
-  </p>
+<!--   <p> -->
+<!--     <a href="http://python.org">Python</a> is a popular language for -->
+<!--     scientific computing, and great for general-purpose programming as -->
+<!--     well.  Installing all of its scientific packages individually can be -->
+<!--     a bit difficult, so we recommend -->
+<!--     <a href="https://www.continuum.io/anaconda">Anaconda</a>, -->
+<!--     an all-in-one installer. -->
+<!--   </p> -->
 
-    <p>
-      Regardless of how you choose to install it,
-      <strong>please make sure you install Python version 3.x</strong>
-      (e.g., 3.4 is fine).
-    </p>
+<!--     <p> -->
+<!--       Regardless of how you choose to install it, -->
+<!--       <strong>please make sure you install Python version 3.x</strong> -->
+<!--       (e.g., 3.4 is fine). -->
+<!--     </p> -->
 
-    <p>
-      We will teach Python using the IPython notebook, a programming environment
-      that runs in a web browser. For this to work you will need a reasonably
-      up-to-date browser. The current versions of the Chrome, Safari and
-      Firefox browsers are all
-      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a>
-      (some older browsers, including Internet Explorer version 9
-      and below, are not).
-    </p>
+<!--     <p> -->
+<!--       We will teach Python using the IPython notebook, a programming environment -->
+<!--       that runs in a web browser. For this to work you will need a reasonably -->
+<!--       up-to-date browser. The current versions of the Chrome, Safari and -->
+<!--       Firefox browsers are all -->
+<!--       <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a> -->
+<!--       (some older browsers, including Internet Explorer version 9 -->
+<!--       and below, are not). -->
+<!--     </p> -->
 
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="python-windows">Windows</h4>
-      <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Windows.</li>
-        <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
-      </ol>
-    </div>
-    <div class="col-md-4">
-      <h4 id="python-macosx">Mac OS X</h4>
-      <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for OS X.</li>
-        <li>Install Python 3 using all of the defaults for installation.</li>
-      </ol>
-    </div>
-    <div class="col-md-4">
-      <h4 id="python-linux">Linux</h4>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Linux.</li>
-        <li>Install Python 3 using all of the defaults for installation.
-        (Installation requires using the shell. If you aren't
-        comfortable doing the installation yourself
-        stop here and request help at the workshop.)</li>
-        <li>
-          Open a terminal window.
-        </li>
-        <li>
-          Type <pre>bash Anaconda3-</pre> and then press
-          tab. The name of the file you just downloaded should
-          appear.
-        </li>
-        <li>
-          Press enter. You will follow the text-only prompts.  When
-          there is a colon at the bottom of the screen press the down
-          arrow to move down through the text. Type <code>yes</code> and
-          press enter to approve the license. Press enter to approve the
-          default location for the files. Type <code>yes</code> and
-          press enter to prepend Anaconda to your <code>PATH</code>
-          (this makes the Anaconda distribution the default Python).
-        </li>
-      </ol>
-    </div>
-  </div>
-<!--
-  <p>
-  Once you are done installing the software listed above,
-  please go to <a href="setup/index.html">this page</a>,
-  which has instructions on how to test that everything was installed correctly.
-  </p>
--->
-</div> <!-- End of 'Python' section. -->
+<!--   <div class="row"> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="python-windows">Windows</h4> -->
+<!--       <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a> -->
+<!--       <ol> -->
+<!--         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li> -->
+<!--         <li>Download the Python 3 installer for Windows.</li> -->
+<!--         <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li> -->
+<!--       </ol> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="python-macosx">Mac OS X</h4> -->
+<!--       <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a> -->
+<!--       <ol> -->
+<!--         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li> -->
+<!--         <li>Download the Python 3 installer for OS X.</li> -->
+<!--         <li>Install Python 3 using all of the defaults for installation.</li> -->
+<!--       </ol> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="python-linux">Linux</h4> -->
+<!--       <ol> -->
+<!--         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li> -->
+<!--         <li>Download the Python 3 installer for Linux.</li> -->
+<!--         <li>Install Python 3 using all of the defaults for installation. -->
+<!--         (Installation requires using the shell. If you aren't -->
+<!--         comfortable doing the installation yourself -->
+<!--         stop here and request help at the workshop.)</li> -->
+<!--         <li> -->
+<!--           Open a terminal window. -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           Type <pre>bash Anaconda3-</pre> and then press -->
+<!--           tab. The name of the file you just downloaded should -->
+<!--           appear. -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           Press enter. You will follow the text-only prompts.  When -->
+<!--           there is a colon at the bottom of the screen press the down -->
+<!--           arrow to move down through the text. Type <code>yes</code> and -->
+<!--           press enter to approve the license. Press enter to approve the -->
+<!--           default location for the files. Type <code>yes</code> and -->
+<!--           press enter to prepend Anaconda to your <code>PATH</code> -->
+<!--           (this makes the Anaconda distribution the default Python). -->
+<!--         </li> -->
+<!--       </ol> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- <\!-- -->
+<!--   <p> -->
+<!--   Once you are done installing the software listed above, -->
+<!--   please go to <a href="setup/index.html">this page</a>, -->
+<!--   which has instructions on how to test that everything was installed correctly. -->
+<!--   </p> -->
+<!-- -\-> -->
+<!-- </div> <\!-- End of 'Python' section. -\-> -->
 
-<div id="r"> <!-- Start of 'R' section. -->
-  <h3>R</h3>
 
-  <p>
-    <a href="http://www.r-project.org">R</a> is a programming language
-    that is especially powerful for data exploration, visualization, and
-    statistical analysis. To interact with R, we use
-    <a href="http://www.rstudio.com/">RStudio</a>.
-  </p>
+<!-- <div id="r"> <\!-- Start of 'R' section. -\-> -->
+<!--   <h3>R</h3> -->
 
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="r-windows">Windows</h4>
-      <a href="https://www.youtube.com/watch?v=q0PjTAylwoU">Video Tutorial</a>
-      <p>
-        Install R by downloading and running
-        <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
-        from <a href="http://cran.r-project.org/index.html">CRAN</a>.
-        Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
-        Note that if you have separate user and admin accounts, you should run the 
-        installers as administrator (right-click on .exe file and select "Run as 
-        administrator" instead of double-clicking). Otherwise problems may occur later, 
-        for example when installing R packages.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="r-macosx">Mac OS X</h4>
-      <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
-      <p>
-        Install R by downloading and running
-        <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
-        from <a href="http://cran.r-project.org/index.html">CRAN</a>.
-        Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="r-linux">Linux</h4>
-      <p>
-        You can download the binary files for your distribution
-        from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or
-        you can use your package manager (e.g. for Debian/Ubuntu
-        run <code>sudo apt-get install r-base</code> and for Fedora run
-        <code>sudo yum install R</code>).  Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
-      </p>
-    </div>
-  </div>
-</div> <!-- End of 'R' section. -->
+<!--   <p> -->
+<!--     <a href="http://www.r-project.org">R</a> is a programming language -->
+<!--     that is especially powerful for data exploration, visualization, and -->
+<!--     statistical analysis. To interact with R, we use -->
+<!--     <a href="http://www.rstudio.com/">RStudio</a>. -->
+<!--   </p> -->
 
-<div id="sql"> <!-- Start of 'SQLite' section. -->
-  <h3>SQLite</h3>
+<!--   <div class="row"> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="r-windows">Windows</h4> -->
+<!--       <a href="https://www.youtube.com/watch?v=q0PjTAylwoU">Video Tutorial</a> -->
+<!--       <p> -->
+<!--         Install R by downloading and running -->
+<!--         <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a> -->
+<!--         from <a href="http://cran.r-project.org/index.html">CRAN</a>. -->
+<!--         Also, please install the -->
+<!--         <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>. -->
+<!--         Note that if you have separate user and admin accounts, you should run the  -->
+<!--         installers as administrator (right-click on .exe file and select "Run as  -->
+<!--         administrator" instead of double-clicking). Otherwise problems may occur later,  -->
+<!--         for example when installing R packages. -->
+<!--       </p> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="r-macosx">Mac OS X</h4> -->
+<!--       <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a> -->
+<!--       <p> -->
+<!--         Install R by downloading and running -->
+<!--         <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a> -->
+<!--         from <a href="http://cran.r-project.org/index.html">CRAN</a>. -->
+<!--         Also, please install the -->
+<!--         <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>. -->
+<!--       </p> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="r-linux">Linux</h4> -->
+<!--       <p> -->
+<!--         You can download the binary files for your distribution -->
+<!--         from <a href="http://cran.r-project.org/index.html">CRAN</a>. Or -->
+<!--         you can use your package manager (e.g. for Debian/Ubuntu -->
+<!--         run <code>sudo apt-get install r-base</code> and for Fedora run -->
+<!--         <code>sudo yum install R</code>).  Also, please install the -->
+<!--         <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>. -->
+<!--       </p> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div> <\!-- End of 'R' section. -\-> -->
 
-  <p>
-    SQL is a specialized programming language used with databases.  We
-    use a simple database manager called
-    <a href="http://www.sqlite.org/">SQLite</a> in our lessons.
-  </p>
+<!-- <div id="sql"> <\!-- Start of 'SQLite' section. -\-> -->
+<!--   <h3>SQLite</h3> -->
 
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="sql-windows">Windows</h4>
-      <p>
-        The <a href="{{site.swc_installer}}">Software Carpentry Windows Installer</a>
-        installs SQLite for Windows.
-        If you used the installer to configure nano, you don't need to run it again.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="sql-macosx">Mac OS X</h4>
-      <p>
-        SQLite comes pre-installed on Mac OS X.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="sql-linux">Linux</h4>
-      <p>
-        SQLite comes pre-installed on Linux.
-      </p>
-    </div>
-  </div>
+<!--   <p> -->
+<!--     SQL is a specialized programming language used with databases.  We -->
+<!--     use a simple database manager called -->
+<!--     <a href="http://www.sqlite.org/">SQLite</a> in our lessons. -->
+<!--   </p> -->
 
-  <p><strong>If you installed Anaconda, it also has a copy of SQLite
-    <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
-    Instructors will provide a workaround for it if needed.</strong></p>
-</div> <!-- End of 'SQLite' section. -->
+<!--   <div class="row"> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="sql-windows">Windows</h4> -->
+<!--       <p> -->
+<!--         The <a href="{{site.swc_installer}}">Software Carpentry Windows Installer</a> -->
+<!--         installs SQLite for Windows. -->
+<!--         If you used the installer to configure nano, you don't need to run it again. -->
+<!--       </p> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="sql-macosx">Mac OS X</h4> -->
+<!--       <p> -->
+<!--         SQLite comes pre-installed on Mac OS X. -->
+<!--       </p> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="sql-linux">Linux</h4> -->
+<!--       <p> -->
+<!--         SQLite comes pre-installed on Linux. -->
+<!--       </p> -->
+<!--     </div> -->
+<!--   </div> -->
+
+<!--   <p><strong>If you installed Anaconda, it also has a copy of SQLite -->
+<!--     <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>. -->
+<!--     Instructors will provide a workaround for it if needed.</strong></p> -->
+<!-- </div> <\!-- End of 'SQLite' section. -\-> -->
 
 <!--
   Uncomment this section if you are using our virtual machine.
