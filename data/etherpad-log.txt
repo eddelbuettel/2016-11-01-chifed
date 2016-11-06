@@ -1,0 +1,276 @@
+Welcome to Software Carpentry Etherpad!
+
+This pad is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents.
+
+Use of this service is restricted to members of the Software Carpentry and Data Carpentry community; this is not for general purpose use (for that, try etherpad.wikimedia.org).git
+
+Users are expected to follow our code of conduct: http://software-carpentry.org/conduct.html
+
+All content is publicly available under the Creative Commons Attribution License: https://creativecommons.org/licenses/by/4.0/
+
+Workshop site: https://eddelbuettel.github.io/2016-11-01-chifed/
+
+
+Grab this URL:  https://github.com/eddelbuettel/2016-11-01-chifed/raw/gh-pages/data/shell-novice-data.zip
+
+
+command for downloading data:
+curl -s -k -L -O -v https://github.com/eddelbuettel/2016-11-01-chifed/raw/gh-pages/data/shell-novice-data.zip
+unzip shell-novice-data.zip
+cd data-shell
+
+
+
+On windows the backslash "\" is used between folders, but git-bash is compatible with the standard unix forward slash "/"
+
+
+pwd - print working directory
+cd - change directory
+cd ~  # move to home directory
+cd - # jump to last directory
+cd / # move to top-level directory (root directory)llb
+cd ..  # move UP a directory
+cd ../.. # move up two directories
+cd    # with no arguments, move to the home directory
+
+ls - list directory
+ls -a  # show hidden files
+cdls -F  # adds a trailing slash to folder names
+
+whoami - print user ID
+
+
+LESS is MORE
+
+
+getting help:
+    ls --help # prints the help
+    curl -h # another way to get help
+    
+more 
+wc   # word count. Lists lines words characters.
+
+To get notepad++ in bash: 
+    
+echo alias notepad++="/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe" > ~/.bashrc
+
+then restart gitbash!
+
+Can you write down the pipe command
+Here's one: wc -l * | sort -n | head -1
+
+
+to move into the gyre directory
+cd ~/data-shell/north-pacific-gyre/2012-07-03/
+
+count lines of files in directory
+wc -l *txt  | sort -n
+
+
+sort -k2   # sorts by second column
+
+uniq removes duplicates, but MUST sort first!
+
+
+for loops in bash:
+    
+for x in files   # files can be a glob like *.txt
+do
+    echo $x
+done
+
+
+grep   # search the text of file
+
+find   # find files by name
+typical usage:
+    
+    find . -name "*.txt"
+    
+
+
+EDITORS:
+    
+    I (Kyler) like Vi and Atom https://atom.io/. Matlab as on ok editor which we will discuss
+    
+
+
+
+
+$
+to exit vi:
+    
+    hit escape then
+    :q!
+    
+    
+    Second Half of day 1:  Matlab
+    
+    curl -s -k -L -O https://github.com/eddelbuettel/2016-11-01-chifed/raw/gh-pages/data/matlab-novice-inflammation-data.zip
+    
+    everything is a matrix, and everything is a double
+    
+    load inflammation file:   M = cvsread('inflammation-01.csv');
+    
+    int16(M)    to coerce
+     
+     indexing starts at 1
+     
+     mean(M)      # column-wise
+     mean(M, 2)  # row-wise
+     
+     NaN   ("not a number") for missing value
+     nanmean(M(:))     # to operate on data containing NaN and skipping
+     
+     nan(3,5)    # preallocate 3x5 and mark as 'not yet recomputed'
+     
+     edit analyze.m      # edit file  'analyze.m'; created as needed  
+     
+     % comment char
+     %% 'cell barrier' to segment portions of code file
+    
+    plot discussion
+    firgure()     # to open plot device
+    hold on, hold off
+    print(...) to plot; 'doc print' for details on arguments
+    
+    Publish feature:  %% Title Here  (as title of first cell barrier)
+    Basic markdown formatting :   _in italic_, or *in bold*
+    Math inside dollar is inline:  $\tau = 5$
+    Equations   inside double $$  e^{\pi i} + 1  0 $$
+    
+    Loops:  for i = 1:size(data, 1)   ...  end
+    
+    Breakpoints     step, continue, step in, step out
+    
+    Note on performance:  more advanced, but  vectorization and parallel code good venues
+    
+    iterate through all inflammation files
+    
+    Functions: one file per function
+    
+    Including assert() in function files
+        
+        
+Dirk's ~/.gitconfig (copy between dash lines)
+
+--------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------    
+[user]
+        name = Your Name
+        email = ...@.....
+[push]
+#       default = simple
+# cf http://stackoverflow.com/a/948397/143305
+        default = current
+[color]
+        ui = true
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+
+Dirk's ~/.bashrc (portion for git prompt)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+## Set the prompt to show the current git branch:
+function parse_git_branch {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "("${ref#refs/heads/}")"
+}
+
+color_prompt=yes
+if [ "$color_prompt" = yes ]; then
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' 
+    # with all blue    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\$(parse_git_branch)\[\033[00m\]\$ "
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\$(parse_git_branch)\[\033[00m\]\$ "
+    #PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)\$ "
+else
+
+
+
+
+
+
+
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+
+git config --list    # lists git settings
+
+
+
+
+git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+
+notepad
+
+
+
+
+
+
+mkdir planets
+cd planets
+
+# initialize git repository
+git init
+
+
+# how to check if you're in a git repository, look for the hidden folder '.git'
+ls -a
+# another way to check:
+    git status
+
+# add a file to the staging area
+git add FILE
+# commit the file to the repository
+git commit -m "a description for what has changed"
+
+# show the history of all the commits
+git log
+
+
+more git alias:
+    
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        ll = log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate --numstat
+        hist = log --graph --decorate --pretty=oneline --abbrev-commit
+        pu = pull --all --prune
+    
+
+
+notepad++ ~/.gitconfig
+(add the aliases above)
+
+
+# commit all changes in tracked files
+git commit -a -m "message"
+
+
+# list branches of git repository
+git branch
+
+# create a new branch and switch to it (check it out)
+git checkout -b BRANCHNAME
+
+# delete a file from the current (and future) state, will still be able to recover the file by checking out an old version
+git rm FILE
+
+
+.gitignore <- a file for listing things to ignore, keeps files you don't want to track from showing up in 'git status' also help prevent accidentally adding them.
+
+
+Use http://gitignore.io to creare richer .gitignore filesit 
+
+git coomands via Matalb GUI
+
+
+https://data.cityofchicago.org
+
+
